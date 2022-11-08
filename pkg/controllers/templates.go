@@ -13,7 +13,6 @@ func init() {
 }
 
 func Home(w http.ResponseWriter, r *http.Request) {
-
 	tpl.ExecuteTemplate(w, "index.html", nil)
 
 }
