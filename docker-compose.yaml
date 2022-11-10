@@ -4,7 +4,7 @@ services:
     build: 
      context: .
      dockerfile: Dockerfile
-    image: go-app-ms:latest
+    image: akashjs/web-app:v8
     ports:
       - "80:80"
     restart: always

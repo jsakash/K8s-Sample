@@ -15,8 +15,8 @@ spec:
         app: web
     spec:
       containers:
-      - name: go-web-app
-        image: go-app-ms:latest
+      - name: k8s-sample
+        image: akashjs/web-app:v8
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80

@@ -1,4 +1,4 @@
-FROM golang:1.18.3-alpine AS builder
+FROM golang:latest AS builder
 WORKDIR /app
 COPY go.mod go.sum ./
 RUN go mod download
@@ -6,9 +6,8 @@ COPY . .
 RUN go build -o main .
 
 
-FROM alpine
-WORKDIR /app
+FROM gcr.io/distroless/base-debian11
 COPY --from=builder /app/main .
 COPY . .
 EXPOSE 80
-CMD ["/app/main"]
+CMD ["/main"]
